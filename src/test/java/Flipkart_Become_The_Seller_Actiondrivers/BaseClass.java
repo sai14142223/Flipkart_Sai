@@ -55,7 +55,7 @@ public class BaseClass {
         }
     }
     public static void Wait_Method(){
-        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
+        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (50));
         driver.manage ().timeouts ().pageLoadTimeout (Duration.ofSeconds (40));
 
     }

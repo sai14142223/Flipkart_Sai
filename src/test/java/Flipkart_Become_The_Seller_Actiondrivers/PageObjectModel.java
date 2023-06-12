@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageObjectModel{
+public class PageObjectModel {
     WebDriver driver;
     @FindBy(xpath = "//a[@class='_3-PJz-']")
     WebElement Become_A_Seller;
-    @FindBy(xpath ="//img[@class='styles__LogoImage-rbc3lh-2 gZANpw']" )
+    @FindBy(xpath = "//img[@class='styles__LogoImage-rbc3lh-2 gZANpw']")
     WebElement Logo;
     @FindBy(xpath = "(//a[@class='link-color'])[1]")
     WebElement Fee_Structure;
@@ -23,7 +23,7 @@ public class PageObjectModel{
     WebElement Shopsy;
     @FindBy(xpath = "(//button[@class='styles__RegisterButton-sc-1kfv72o-1 kFfmtT'])[1]")
     WebElement Start_Selling;
-    @FindBy(xpath="//li[@class='mobile-visible']")
+    @FindBy(xpath = "//li[@class='mobile-visible']")
     WebElement Login;
     @FindBy(xpath = "//input[@class='styles__StyledInput-cql555-1 fPuYwe login']")
     WebElement Username_Or_10_Digit_Phone_Number_Or_Email;
@@ -42,19 +42,79 @@ public class PageObjectModel{
 
     public PageObjectModel(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements (driver, this);
+        PageFactory.initElements(driver, this);
     }
+
     public void BecomeSeller() {
         Become_A_Seller.click();
 
     }
 
+    public void Logo() {
+        Logo.click();
 
+    }
 
+    public void Fee_Structure() {
+        Fee_Structure.click();
+    }
 
+    public void Services() {
+        Services.click();
+    }
 
+    public void FAQS() {
+        FAQs.click();
+    }
 
+    public void Shopsy() {
+        Shopsy.click();
+    }
 
+    public void StartSelling() {
+        Start_Selling.click();
+    }
 
+    public void Login() {
+        Login.click();
+    }
 
+    public void Usernameoremail() {
+        Username_Or_10_Digit_Phone_Number_Or_Email.sendKeys();
+    }
+
+    public void mobilenumber() {
+        Enter_Mobile_Number.sendKeys();
+    }
+
+    public void emailid() {
+        Enter_Email_ID.sendKeys();
+    }
+
+    public void gstinnumber() {
+        Enter_GSTIN_Number.sendKeys();
+    }
+
+    public void All_Categories() {
+        All_Categories.click();
+    }
+
+    public void Only_Books() {
+        Only_Books.click();
+    }
+
+    public void Register_And_Continue_Button() {
+        Register_And_Continue_Button.click();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -30,6 +30,61 @@ public class BecomeTheSeller_Testcases {
         el.BecomeSeller();
         takeScreenshot("BecomeSeller");
     }
+
+    @Test
+    public void TC002() throws Exception {
+        el.BecomeSeller();
+        el.Logo();
+        takeScreenshot("Logo");
+    }
+    @Test
+    public void TC003() throws Exception {
+        el.BecomeSeller();
+        el.Logo();
+        el.Fee_Structure();
+        Thread.sleep(5000);
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        takeScreenshot("sc1");
+
+    }
+    @Test
+    public void TC004() throws Exception {
+        el.BecomeSeller();
+        el.Logo();
+        el.Fee_Structure();
+        el.Services();
+        Thread.sleep(4000);
+        takeScreenshot("sc2");
+    }
+    @Test
+    public void TC005() throws Exception {
+        el.BecomeSeller();
+        el.Logo();
+        el.Fee_Structure();
+        el.Services();
+        el.FAQS();
+        Thread.sleep(4000);
+        takeScreenshot("sc3");
+    }
+    @Test
+    public void TC006() throws Exception {
+        el.BecomeSeller();
+        el.Logo();
+        el.Fee_Structure();
+        el.Services();
+        el.FAQS();
+        el.Shopsy();
+        Thread.sleep(4000);
+        takeScreenshot("sc4");
+    }
+    @Test
+    public void TC007() throws Exception {
+        el.BecomeSeller();
+        el.StartSelling();
+        Thread.sleep(4000);
+        takeScreenshot("sc5");
+    }
+
     @AfterMethod
     public void testEnd(ITestResult result) throws Exception {
         i = i + 1;
