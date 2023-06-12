@@ -17,9 +17,7 @@ import java.time.Duration;
 public class BaseClass {
     public static WebDriver driver;
     public static String baseUrl;
-    //public static ExtentReports ER;
     public static String browser = "chrome";
-    //public static Logger logger = LogManager.getLogManager ().getLogger (FlipkartBaseClass.class.getName ());
     public static void openBrowser(String browserName, String baseUrl) {
         if (browserName.equalsIgnoreCase ("chrome")) {
             WebDriverManager.chromedriver ().setup ();
