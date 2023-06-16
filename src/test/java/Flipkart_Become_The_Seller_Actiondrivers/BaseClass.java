@@ -2,10 +2,7 @@ package Flipkart_Become_The_Seller_Actiondrivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -54,6 +51,16 @@ public class BaseClass {
             driver.findElement (By.xpath ("//button[@class='_2KpZ6l _2doB4z']")).click ();
         }
     }
+    public static void Popup() {
+        Alert alert = driver.switchTo ().alert ();
+        String text1 = alert.getText ();
+        {
+            System.out.println ("alert text is : "+text1);
+        }
+        //driver.findElement(By.xpath("//div[@class='moe-push-class']"));
+        alert.dismiss ();
+    }
+
     public static void Wait_Method(){
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (50));
         driver.manage ().timeouts ().pageLoadTimeout (Duration.ofSeconds (40));

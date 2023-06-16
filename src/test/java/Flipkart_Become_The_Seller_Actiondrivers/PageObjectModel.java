@@ -1,7 +1,9 @@
 package Flipkart_Become_The_Seller_Actiondrivers;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,10 +23,12 @@ public class PageObjectModel {
     WebElement FAQs;
     @FindBy(xpath = "(//a[@class='link-color'])[5]")
     WebElement Shopsy;
-    @FindBy(xpath = "(//button[@class='styles__RegisterButton-sc-1kfv72o-1 kFfmtT'])[1]")
+    @FindBy(xpath = "(//div[@class='styles__RegisterContainer-sc-1kfv72o-0 ilMBvo'])[2]")
     WebElement Start_Selling;
-    @FindBy(xpath = "//li[@class='mobile-visible']")
+    @FindBy(xpath = "//div[@class='styles__LoginContainer-rbc3lh-5 jExJvC']")
     WebElement Login;
+    @FindBy(xpath = "/html/body/div[1]/div[3]/section/section/div/div[2]/a")
+    WebElement Register_For_New_Account;
     @FindBy(xpath = "//input[@class='styles__StyledInput-cql555-1 fPuYwe login']")
     WebElement Username_Or_10_Digit_Phone_Number_Or_Email;
     @FindBy(xpath = "//input[@class='styles__StyledInput-cql555-1 gNVcCr styles__CustomInput-sc-12mlfxt-3 bfXnRM sign-up']")
@@ -60,10 +64,12 @@ public class PageObjectModel {
     }
 
     public void Services() {
+
         Services.click();
     }
 
     public void FAQS() {
+
         FAQs.click();
     }
 
@@ -72,38 +78,55 @@ public class PageObjectModel {
     }
 
     public void StartSelling() {
+
         Start_Selling.click();
     }
 
     public void Login() {
+
         Login.click();
     }
+    public void Register() {
+        for (String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+            System.out.println("Window Switch");
+            Register_For_New_Account.click();
 
-    public void Usernameoremail() {
-        Username_Or_10_Digit_Phone_Number_Or_Email.sendKeys();
+        }
     }
 
-    public void mobilenumber() {
-        Enter_Mobile_Number.sendKeys();
+    public void Username() {
+
+        Username_Or_10_Digit_Phone_Number_Or_Email.sendKeys("pujita_12345");
+    }
+
+    public void mobile() {
+
+        Enter_Mobile_Number.sendKeys("9876543210");
     }
 
     public void emailid() {
-        Enter_Email_ID.sendKeys();
+
+        Enter_Email_ID.sendKeys("testuser@gmail.com");
     }
 
     public void gstinnumber() {
-        Enter_GSTIN_Number.sendKeys();
+
+        Enter_GSTIN_Number.sendKeys("22AAAAA0000A1Z5");
     }
 
-    public void All_Categories() {
+    public void AllCategories() {
+
         All_Categories.click();
     }
 
-    public void Only_Books() {
+    public void OnlyBooks() {
+
         Only_Books.click();
     }
 
     public void Register_And_Continue_Button() {
+
         Register_And_Continue_Button.click();
     }
 }

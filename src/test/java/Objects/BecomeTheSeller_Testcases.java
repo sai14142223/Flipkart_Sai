@@ -77,13 +77,35 @@ public class BecomeTheSeller_Testcases {
         Thread.sleep(4000);
         takeScreenshot("sc4");
     }
+
     @Test
     public void TC007() throws Exception {
         el.BecomeSeller();
         el.StartSelling();
         Thread.sleep(4000);
         takeScreenshot("sc5");
+
     }
+    @Test
+    public void TC008() throws Exception {
+        el.BecomeSeller();
+        el.Login();
+        Thread.sleep(4000);
+        takeScreenshot("sc6");
+
+
+    }
+    @Test
+    public void TC009() throws Exception {
+        el.BecomeSeller();
+        el.Login();
+        el.Register();
+        Thread.sleep(4000);
+        takeScreenshot("sc7");
+        bc.Popup();
+        takeScreenshot("close popup");
+    }
+
 
     @AfterMethod
     public void testEnd(ITestResult result) throws Exception {
