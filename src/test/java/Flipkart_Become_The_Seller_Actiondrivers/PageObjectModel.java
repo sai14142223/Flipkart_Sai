@@ -1,5 +1,6 @@
 package Flipkart_Become_The_Seller_Actiondrivers;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,6 +61,7 @@ public class PageObjectModel {
     }
 
     public void Fee_Structure() {
+
         Fee_Structure.click();
     }
 
@@ -74,6 +76,7 @@ public class PageObjectModel {
     }
 
     public void Shopsy() {
+
         Shopsy.click();
     }
 
@@ -91,44 +94,41 @@ public class PageObjectModel {
             driver.switchTo().window(winHandle);
             System.out.println("Window Switch");
             Register_For_New_Account.click();
+            Alert alert = driver.switchTo ().alert ();
+            String text = alert.getText ();
+            {
+                System.out.println ("alert text is :"+text);
+            }
+            alert.dismiss ();
 
         }
     }
 
-    public void Username() {
+//    }public  void ClosePopup() {
+//        Alert_Popup
+//        Alert alert = driver.switchTo ().alert ();
+//        String text = alert.getText ();
+//        {
+//            System.out.println ("alert text is :"+text);
+//        }
+//        alert.dismiss ();
+
+    public void RegistrationDetails() throws InterruptedException {
 
         Username_Or_10_Digit_Phone_Number_Or_Email.sendKeys("pujita_12345");
-    }
-
-    public void mobile() {
-
         Enter_Mobile_Number.sendKeys("9876543210");
-    }
-
-    public void emailid() {
-
         Enter_Email_ID.sendKeys("testuser@gmail.com");
-    }
-
-    public void gstinnumber() {
-
         Enter_GSTIN_Number.sendKeys("22AAAAA0000A1Z5");
-    }
-
-    public void AllCategories() {
-
         All_Categories.click();
-    }
-
-    public void OnlyBooks() {
-
+        Thread.sleep(5000);
         Only_Books.click();
-    }
-
-    public void Register_And_Continue_Button() {
-
+        Thread.sleep(5000);
         Register_And_Continue_Button.click();
+        Thread.sleep(5000);
+
     }
+
+
 }
 
 

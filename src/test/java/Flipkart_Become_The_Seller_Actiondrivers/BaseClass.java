@@ -57,7 +57,7 @@ public class BaseClass {
         {
             System.out.println ("alert text is : "+text1);
         }
-        //driver.findElement(By.xpath("//div[@class='moe-push-class']"));
+        //driver.findElement(By.xpath("//*[@id="desktopBannerWrapped"]/div"));
         alert.dismiss ();
     }
 

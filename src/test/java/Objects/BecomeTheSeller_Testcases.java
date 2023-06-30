@@ -102,8 +102,15 @@ public class BecomeTheSeller_Testcases {
         el.Register();
         Thread.sleep(4000);
         takeScreenshot("sc7");
-        bc.Popup();
-        takeScreenshot("close popup");
+    }
+    @Test
+    public void TC010() throws Exception {
+        el.BecomeSeller();
+        el.Login();
+        el.Register();
+        el.RegistrationDetails();
+        takeScreenshot("sc8");
+
     }
 
 
