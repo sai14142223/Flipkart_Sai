@@ -18,7 +18,7 @@ public class Flipkart_Home_TestCases
     FlipkartBaseClass bs;
     int i=0;
     @BeforeMethod
-    public void setup() throws Exception {
+    public void Verify_FlipkartLandingPage() throws Exception {
         openBrowser("chrome","https://www.flipkart.com/");
         takeScreenshot ("FlipKart Launch");
         lp = new FlipkartPOM (driver);
@@ -29,161 +29,161 @@ public class Flipkart_Home_TestCases
     }
 
     @Test
-    public void TC003() throws Exception {
-        lp.MouseHover ();
+    public void Verify_That_Home_FurnitureCategory() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
         takeScreenshot ("Select HomeCategory");
     }
 
     @Test
-    public void TC004() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
+    public void Verify_That_Home_FurnitureSubcategory() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
         takeScreenshot ("Select HomeSubCategory");
     }
     @Test
-    public void TC005() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
-        lp.Bed_Linens();
+    public void Verify_That_Bed_LinensSubcategory() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
         takeScreenshot ("Open ProductListingPage");
     }
     @Test
-    public void TC006() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
-        lp.Bed_Linens();
-        lp.CustomerRating4 ();
+    public void Verify_That_Customer_4StarRating_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateCustomer4StarRatingCheckBoxField ();
         takeScreenshot ("4_Rating");
     }
     @Test
-    public void TC007() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
-        lp.Bed_Linens();
-        lp.CustomerRating3 ();
+    public void Verify_That_Customer_3StarRating_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.VakidateCustomer3StarRatingCheckBoxField ();
         takeScreenshot ("3_Rating");
     }
     @Test
-    public void TC008() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
-        lp.Bed_Linens();
-        lp.CustomerRating2 ();
+    public void Verify_That_Customer_2StarRating_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateCustomer2starRatingCheckBoxField ();
         takeScreenshot ("2_Rating");
     }
     @Test
-    public void TC009() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings();
-        lp.Bed_Linens();
-        lp.CustomerRating1 ();
+    public void Verify_That_Customer_1StarRating_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateCustomer1StarRatingCheckBoxField ();
         takeScreenshot ("1_Rating");
     }
     @Test
-    public void TC010() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.selectOffers1 ();
+    public void Verify_That_ByeMore_SaveMore_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateByeMore_SaveMore_CheckBoxField ();
         takeScreenshot ("BuyMore");
 
     }
     @Test
-    public void TC011() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.selectOffers2 ();
+    public void Verify_That_No_Cost_EMI_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateNo_Cost_EMI_CheckBoxField ();
         takeScreenshot ("NoCostEMI");
     }
     @Test
-    public void TC012() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.selectOffers3 ();
+    public void Verify_That_Special_Price_CheckBoxField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateSpecial_Price_CheckBoxField ();
         takeScreenshot ("SpecialPrice");
     }
     @Test
-    public void TC013() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.Select_Availability ();
+    public void Verify_That_AvailabilityDropdownField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.Validate_AvailabilityDropdownField ();
         takeScreenshot ("SelectAvailability");
     }
     @Test
-    public void TC014() throws Exception {
-            lp.MouseHover ();
-            lp.Home_Furnishings ();
-            lp.Bed_Linens ();
-            lp.Select_Availability ();
-            lp.Select_Availability_Checkbox ();
+    public void Verify_That_Availability_CheckboxField() throws Exception {
+            lp.ValidateHomeAndFurnitureCategory ();
+            lp.ValidateHome_FurnishingsSubcategory ();
+            lp.ValidateBed_LinensSubcategory ();
+            lp.Validate_AvailabilityDropdownField ();
+            lp.ValidateAvailability_CheckboxField ();
             takeScreenshot ("SelectAvailabilityCheckbox");
         }
     @Test
-    public void TC015() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.FlipkartAss ();
+    public void Verify_That_FlipkartAssField() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateFlipkartAssField ();
         takeScreenshot ("SelectFlipkartAssured");
     }
         @Test
-        public void TC016() throws Exception {
-            lp.MouseHover ();
-            lp.Home_Furnishings ();
-            lp.Bed_Linens ();
+        public void Verify_That_Select_ALL_CheckboxFields() throws Exception {
+            lp.ValidateHomeAndFurnitureCategory ();
+            lp.ValidateHome_FurnishingsSubcategory ();
+            lp.ValidateBed_LinensSubcategory ();
             driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
             driver.manage ().timeouts ().pageLoadTimeout (Duration.ofSeconds (40));
-            lp.Select_ALL_Checkbox ();
+            lp.ValidateSelect_ALL_CheckboxFields ();
             takeScreenshot ("Select_all_Checkbox");
         }
         @Test
-        public void TCO17() throws Exception {
-            lp.MouseHover ();
-            lp.Home_Furnishings ();
-            lp.Bed_Linens ();
-            lp.FlipkartAss ();
-            lp.Select_ALL_Checkbox ();
+        public void Verify_That_UserSwitchToNewTabWindow() throws Exception {
+            lp.ValidateHomeAndFurnitureCategory ();
+            lp.ValidateHome_FurnishingsSubcategory ();
+            lp.ValidateBed_LinensSubcategory ();
+            lp.ValidateFlipkartAssField ();
+            lp.ValidateSelect_ALL_CheckboxFields ();
             Thread.sleep (2000);
-            lp.OpenProductDetailPage ();
+            lp.ValidateUserOpenProductDetailPage ();
             takeScreenshot ("Product_Detail_page");
-            lp.SwitchNewTab ();
+            lp.ValidateUserSwitchToNewTabWindow ();
             takeScreenshot ("Switch_product_DetailPage");
         }
     @Test
-    public void TCO18() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.FlipkartAss ();
-        lp.Select_ALL_Checkbox ();
+    public void Verify_That_UserClick_Favorite_icon() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateFlipkartAssField ();
+        lp.ValidateSelect_ALL_CheckboxFields ();
         Thread.sleep (2000);
-        lp.OpenProductDetailPage ();
+        lp.ValidateUserOpenProductDetailPage ();
         takeScreenshot ("Product_Detail_page");
-        lp.SwitchNewTab ();
+        lp.ValidateUserSwitchToNewTabWindow ();
           driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
-        lp.Click_Favorite_icon ();
+        lp.ValidateUserClick_Favorite_icon ();
         takeScreenshot ("ClickFavoriteIcon");
         bs.LoinPopup ();
 
     }
     @Test
-    public void TC019() throws Exception {
-        lp.MouseHover ();
-        lp.Home_Furnishings ();
-        lp.Bed_Linens ();
-        lp.Select_ALL_Checkbox ();
-        lp.FlipkartAss ();
+    public void Verify_That_ValidateUserEnter_PinCode() throws Exception {
+        lp.ValidateHomeAndFurnitureCategory ();
+        lp.ValidateHome_FurnishingsSubcategory ();
+        lp.ValidateBed_LinensSubcategory ();
+        lp.ValidateSelect_ALL_CheckboxFields();
+        lp.ValidateFlipkartAssField ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Thread.sleep (2000);
-        lp.OpenProductDetailPage ();
+        lp.ValidateUserOpenProductDetailPage ();
         takeScreenshot ("Product_Detail_page");
-        lp.SwitchNewTab ();
+        lp.ValidateUserSwitchToNewTabWindow ();
         takeScreenshot ("Switch_product_DetailPage");
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
-        lp.Enter_PinCode ();
+        lp.ValidateUserEnter_PinCode ();
 
     }
 

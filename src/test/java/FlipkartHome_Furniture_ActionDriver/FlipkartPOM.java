@@ -62,95 +62,95 @@ public class FlipkartPOM {
         PageFactory.initElements (driver, this);
     }
 
-    public void MouseHover() {
+    public void ValidateHomeAndFurnitureCategory() {
         Actions actions = new Actions (driver);
         WebElement menuOption = MouseHover_HomeCategory;
         actions.moveToElement (menuOption).build ().perform ();
 
     }
 
-    public void Home_Furnishings() {
+    public void ValidateHome_FurnishingsSubcategory() {
         Actions actions = new Actions (driver);
         WebElement subMenuOption = Home_Furnishings;
         actions.moveToElement (subMenuOption).build ().perform ();
         actions.moveToElement (subMenuOption).pause (Duration.ofSeconds (10));
     }
 
-    public void Bed_Linens() {
+    public void ValidateBed_LinensSubcategory() {
         Actions actions = new Actions (driver);
         //WebElement ProductListingPage = Bed_Linens;
         actions.moveToElement (Bed_Linens).build ().perform ();
         Bed_Linens.click ();
     }
 
-    public void CustomerRating4() {
+    public void ValidateCustomer4StarRatingCheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (CustomerRating).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Rating_4.click ();
     }
 
-    public void CustomerRating3() {
+    public void VakidateCustomer3StarRatingCheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (CustomerRating).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Rating_3.click ();
     }
 
-    public void CustomerRating2() {
+    public void ValidateCustomer2starRatingCheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (CustomerRating).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Rating_2.click ();
     }
 
-    public void CustomerRating1() {
+    public void ValidateCustomer1StarRatingCheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (CustomerRating).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Rating_1.click ();
     }
 
-    public void selectOffers1() {
+    public void ValidateByeMore_SaveMore_CheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (Offers).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         ByeMore_SaveMore_CheckBox.click ();
     }
 
-    public void selectOffers2() {
+    public void ValidateNo_Cost_EMI_CheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (Offers).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         No_Cost_EMI_CheckBox.click ();
     }
 
-    public void selectOffers3() {
+    public void ValidateSpecial_Price_CheckBoxField() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (Offers).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Special_Price_CheckBox.click ();
     }
-    public void Select_Availability(){
+    public void Validate_AvailabilityDropdownField(){
         Actions actions=new Actions (driver);
         actions.scrollToElement (Availability).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Availability.click ();
     }
-    public void Select_Availability_Checkbox(){
+    public void ValidateAvailability_CheckboxField(){
         Actions actions=new Actions (driver);
         actions.scrollToElement (Availability).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         Select_out_of_Stock.click ();
     }
-    public void FlipkartAss(){
+    public void ValidateFlipkartAssField(){
         Actions actions=new Actions (driver);
         actions.scrollToElement (FlipkartAssured).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         FlipkartAssured.click ();
     }
 
-    public void Select_ALL_Checkbox() throws InterruptedException {
+    public void ValidateSelect_ALL_CheckboxFields() throws InterruptedException {
         Actions actions=new Actions (driver);
         actions.scrollToElement (Availability).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
@@ -163,7 +163,7 @@ public class FlipkartPOM {
            Checkboxes.get (i).click ();
         }
     }
-    public void OpenProductDetailPage()
+    public void ValidateUserOpenProductDetailPage()
     {
         Actions actions=new Actions (driver);
         actions.scrollToElement (OpenProduct).build ().perform ();
@@ -171,7 +171,7 @@ public class FlipkartPOM {
         OpenProduct.click ();
 
     }
-    public void SwitchNewTab(){
+    public void ValidateUserSwitchToNewTabWindow(){
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
         String parentTab = it.next();
@@ -179,11 +179,11 @@ public class FlipkartPOM {
         driver.switchTo().window(childTab);
 
     }
-    public void Click_Favorite_icon(){
+    public void ValidateUserClick_Favorite_icon(){
         Favorite.click ();
 
     }
-    public void Enter_PinCode(){
+    public void ValidateUserEnter_PinCode(){
         Actions actions=new Actions (driver);
         actions.scrollToElement (Enter_pinCode).pause (10).build ().perform ();
         Enter_pinCode.sendKeys ("500073");
