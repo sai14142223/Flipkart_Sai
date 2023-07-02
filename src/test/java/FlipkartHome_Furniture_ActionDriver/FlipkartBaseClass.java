@@ -38,7 +38,7 @@ public class FlipkartBaseClass {
             driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         }
         driver.manage ().window ().maximize ();
-       // logger.info (browserName +"Lunch browser successfully ");
+       // logger.info (browserName +"Launch browser successfully ");
         driver.get (baseUrl);
         driver.getCurrentUrl ();
     }

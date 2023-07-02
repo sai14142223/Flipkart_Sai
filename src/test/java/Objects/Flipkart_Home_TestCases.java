@@ -20,7 +20,7 @@ public class Flipkart_Home_TestCases
     @BeforeMethod
     public void setup() throws Exception {
         openBrowser("chrome","https://www.flipkart.com/");
-        takeScreenshot ("FlipKart Lunch");
+        takeScreenshot ("FlipKart Launch");
         lp = new FlipkartPOM (driver);
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         FlipkartBaseClass.LoinPopup ();
@@ -31,8 +31,6 @@ public class Flipkart_Home_TestCases
     @Test
     public void TC003() throws Exception {
         lp.MouseHover ();
-        //logger.info ("Verify");
-       //logger = ER.addSystemInfo ("Verify share product buttons for an item in Ethnic Store");
         takeScreenshot ("Select HomeCategory");
     }
 
@@ -50,7 +48,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("Open ProductListingPage");
     }
     @Test
-    public void TC007() throws Exception {
+    public void TC006() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings();
         lp.Bed_Linens();
@@ -58,7 +56,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("4_Rating");
     }
     @Test
-    public void TC008() throws Exception {
+    public void TC007() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings();
         lp.Bed_Linens();
@@ -66,7 +64,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("3_Rating");
     }
     @Test
-    public void TC009() throws Exception {
+    public void TC008() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings();
         lp.Bed_Linens();
@@ -74,7 +72,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("2_Rating");
     }
     @Test
-    public void TC010() throws Exception {
+    public void TC009() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings();
         lp.Bed_Linens();
@@ -82,7 +80,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("1_Rating");
     }
     @Test
-    public void TC011() throws Exception {
+    public void TC010() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -91,7 +89,7 @@ public class Flipkart_Home_TestCases
 
     }
     @Test
-    public void TC012() throws Exception {
+    public void TC011() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -99,7 +97,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("NoCostEMI");
     }
     @Test
-    public void TC013() throws Exception {
+    public void TC012() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -107,7 +105,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("SpecialPrice");
     }
     @Test
-    public void TC014() throws Exception {
+    public void TC013() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -115,7 +113,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("SelectAvailability");
     }
     @Test
-    public void TC015() throws Exception {
+    public void TC014() throws Exception {
             lp.MouseHover ();
             lp.Home_Furnishings ();
             lp.Bed_Linens ();
@@ -124,7 +122,7 @@ public class Flipkart_Home_TestCases
             takeScreenshot ("SelectAvailabilityCheckbox");
         }
     @Test
-    public void TC016() throws Exception {
+    public void TC015() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -132,7 +130,7 @@ public class Flipkart_Home_TestCases
         takeScreenshot ("SelectFlipkartAssured");
     }
         @Test
-        public void TC017() throws Exception {
+        public void TC016() throws Exception {
             lp.MouseHover ();
             lp.Home_Furnishings ();
             lp.Bed_Linens ();
@@ -142,7 +140,7 @@ public class Flipkart_Home_TestCases
             takeScreenshot ("Select_all_Checkbox");
         }
         @Test
-        public void TCO18() throws Exception {
+        public void TCO17() throws Exception {
             lp.MouseHover ();
             lp.Home_Furnishings ();
             lp.Bed_Linens ();
@@ -155,7 +153,7 @@ public class Flipkart_Home_TestCases
             takeScreenshot ("Switch_product_DetailPage");
         }
     @Test
-    public void TCO19() throws Exception {
+    public void TCO18() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();
@@ -172,7 +170,7 @@ public class Flipkart_Home_TestCases
 
     }
     @Test
-    public void TC020() throws Exception {
+    public void TC019() throws Exception {
         lp.MouseHover ();
         lp.Home_Furnishings ();
         lp.Bed_Linens ();

@@ -45,7 +45,7 @@ public class FlipkartPOM {
     @FindBy(xpath = "//div[@class='_24_Dny _3tCU7L']")
     WebElement FlipkartAssured;
     @FindBy(xpath = "//div[@class='_24_Dny']")
-    List<WebElement> Select_all_checkbox;
+    WebElement Select_all_checkbox;
     @FindBy(xpath = "//div[@data-id='MTPGYCZY2GVN8PTD']")
     WebElement OpenProduct;
     @FindBy(xpath = "//div[@class='_36FSn5']")
@@ -83,7 +83,7 @@ public class FlipkartPOM {
         Bed_Linens.click ();
     }
 
-    public void CustomerRating4() throws InterruptedException {
+    public void CustomerRating4() {
         Actions actions = new Actions (driver);
         actions.scrollToElement (CustomerRating).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
@@ -154,13 +154,13 @@ public class FlipkartPOM {
         Actions actions=new Actions (driver);
         actions.scrollToElement (Availability).build ().perform ();
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
-        List<WebElement>Checkboxes=Select_all_checkbox;
+        List<WebElement>Checkboxes= (List<WebElement>) Select_all_checkbox;
         System.out.println ("Total no of elements:"+Checkboxes.size ());
         driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
         for(int i=0;i<Checkboxes.size ();i++)
         {
            Thread.sleep (5000);
-            Checkboxes.get (i).click ();
+           Checkboxes.get (i).click ();
         }
     }
     public void OpenProductDetailPage()
