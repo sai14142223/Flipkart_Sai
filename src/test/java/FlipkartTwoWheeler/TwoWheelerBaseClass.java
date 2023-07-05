@@ -21,7 +21,8 @@ public class TwoWheelerBaseClass
 {
     public static WebDriver driver;
     public static String baseUrl;
-    public static String browser = "chrome";
+    public static String browser = "Chrome";
+    public static String browser1 = "Edge";
     public static void openBrowser(String browserName, String baseUrl)
     {
         if (browserName.equalsIgnoreCase("Chrome"))
@@ -40,14 +41,16 @@ public class TwoWheelerBaseClass
             driver = new FirefoxDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
-        else if (browserName.equalsIgnoreCase("edge"))
+        else if (browserName.equalsIgnoreCase("Edge"))
         {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
         driver.get(baseUrl);
+        driver.getCurrentUrl();
     }
     public static void takeScreenshot(String ScreenshotName) throws Exception
     {
