@@ -137,18 +137,18 @@ public class PageObjectModal {
         actions.moveToElement(addProduct).perform();
         addProduct.click();
     }
-//    public void validateHeaderCartButton() throws InterruptedException {
-//        Actions actions = new Actions(driver);
-//        WebElement CheckProductCart = HeaderCartButton;
-//        actions.moveToElement(CheckProductCart).perform();
-//        CheckProductCart.click();
-//    }
-//    public void validateAddMoreQuantityField() throws InterruptedException {
-//        Actions actions = new Actions(driver);
-//        WebElement CheckProductCart = AddMoreQuantity;
-//        actions.moveToElement(CheckProductCart).perform();
-//        CheckProductCart.click();
-//    }
+    public void validateHeaderCartButton() throws InterruptedException {
+        Actions actions = new Actions(driver);
+        WebElement CheckProductCart = HeaderCartButton;
+        actions.moveToElement(CheckProductCart).perform();
+        CheckProductCart.click();
+    }
+    public void validateAddMoreQuantityField() throws InterruptedException {
+        Actions actions = new Actions(driver);
+        WebElement CheckProductCart = AddMoreQuantity;
+        actions.moveToElement(CheckProductCart).perform();
+        CheckProductCart.click();
+    }
     public void validateSaveForLaterField() throws InterruptedException {
         Actions actions = new Actions(driver);
         WebElement CheckProductCart = SaveForLater;

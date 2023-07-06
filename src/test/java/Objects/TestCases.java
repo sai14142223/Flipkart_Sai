@@ -3,9 +3,7 @@ package Objects;
 import FlipkartElectronics.BaseClass;
 import FlipkartElectronics.PageObjectModal;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
@@ -15,7 +13,7 @@ public class TestCases {
     PageObjectModal lp;
     BaseClass bs;
     int i=0;
-    @BeforeMethod
+    @BeforeTest
     public void Verify_FlipkartLandingPage() throws Exception {
         openBrowser("chrome","https://www.flipkart.com/");
         takeScreenshot ("FlipKart Launch");
@@ -26,104 +24,96 @@ public class TestCases {
         //logger.info ("LoginPopup closed successfully ");
     }
 
-    @Test
+    @Test(priority = 0)
     public void Verify_Electronics_Category() throws Exception {
         lp.validateElectronicsCategory();
         takeScreenshot("TC1");
     }
-    @Test
+    @Test(priority = 1)
     public void Verify_WirelessField() throws Exception {
-        lp.validateElectronicsCategory();
-        Thread.sleep(5000);
+
         lp.validateTrue_WirelessField();
         takeScreenshot("TC2");
     }
-    @Test
+    @Test(priority = 2)
     public void Verify_RatingFields() throws Exception {
-        lp.validateElectronicsCategory();
-        Thread.sleep(5000);
-        lp.validateTrue_WirelessField();
-        Thread.sleep(5000);
+
         lp.validateFourStarRatingField();
         Thread.sleep(5000);
         takeScreenshot("TC3");
     }
-    @Test
+    @Test(priority = 3)
     public void Verify_BrandFields() throws Exception {
-        lp.validateElectronicsCategory();
-        Thread.sleep(5000);
-        lp.validateTrue_WirelessField();
-        Thread.sleep(5000);
-        lp.validateFourStarRatingField();
-        Thread.sleep(5000);
+
         lp.validateBoat_BrandField();
         Thread.sleep(5000);
         takeScreenshot("TC4");
     }
-    @Test
+    @Test(priority = 4)
     public void Verify_NoiseBudsProduct() throws Exception {
-        lp.validateElectronicsCategory();Thread.sleep(5000);
-        lp.validateTrue_WirelessField();Thread.sleep(5000);
-        lp.validateFourStarRatingField();Thread.sleep(5000);
-        lp.validateBoat_BrandField();Thread.sleep(5000);
+
         lp.validateNoiseBudsProduct();Thread.sleep(5000);
-        lp.ValidateUserSwitchToNewTabWindow();Thread.sleep(5000);
         takeScreenshot("TC5");
     }
-    @Test
-    public void Verify_ProductDetailPage() throws Exception {
-        lp.validateElectronicsCategory();Thread.sleep(5000);
-        lp.validateTrue_WirelessField();Thread.sleep(5000);
-        lp.validateFourStarRatingField();Thread.sleep(5000);
-        lp.validateBoat_BrandField();Thread.sleep(5000);
-        lp.validateNoiseBudsProduct();Thread.sleep(5000);
+    @Test(priority = 5)
+    public void Verify_SwitchToNewWindow() throws Exception {
+
         lp.ValidateUserSwitchToNewTabWindow();Thread.sleep(5000);
-        //lp.ValidateSelect_ALL_TailImagesFields();Thread.sleep(5000);
-        lp.validatePinCode();Thread.sleep(5000);
         takeScreenshot("TC6");
     }
+//    @Test(priority = 6)
+//    public void Verify_ProductDetailPage() throws Exception {
+//
+//        lp.ValidateSelect_ALL_TailImagesFields();Thread.sleep(5000);
+//        lp.validatePinCode();Thread.sleep(5000);
+//        takeScreenshot("TC6");
+//    }
 
-    @Test
+    @Test(priority = 7)
     public void Verify_Add_to_CartButton() throws Exception {
-        lp.validateElectronicsCategory();Thread.sleep(5000);
-        lp.validateTrue_WirelessField();Thread.sleep(5000);
-        lp.validateFourStarRatingField();Thread.sleep(5000);
-        lp.validateBoat_BrandField();Thread.sleep(5000);
-        lp.validateNoiseBudsProduct();Thread.sleep(5000);
-        lp.ValidateUserSwitchToNewTabWindow();Thread.sleep(5000);
-        //lp.ValidateSelect_ALL_TailImagesFields();Thread.sleep(5000);
+
         lp.validatePinCode();Thread.sleep(5000);
         lp.validateAdd_to_CartButton();Thread.sleep(5000);
         takeScreenshot("TC7");
     }
-    @Test
-    public void Verify_CartPage() throws Exception {
-        lp.validateElectronicsCategory();Thread.sleep(5000);
-        lp.validateTrue_WirelessField();Thread.sleep(5000);
-        lp.validateFourStarRatingField();Thread.sleep(5000);
-        lp.validateBoat_BrandField();Thread.sleep(5000);
-        lp.validateNoiseBudsProduct();Thread.sleep(5000);
-        lp.ValidateUserSwitchToNewTabWindow();Thread.sleep(5000);
-        //lp.ValidateSelect_ALL_TailImagesFields();Thread.sleep(5000);
-        lp.validatePinCode();Thread.sleep(5000);
-        lp.validateAdd_to_CartButton();Thread.sleep(5000);
-        takeScreenshot("TC8");
-       // lp.validateAddMoreQuantityField();Thread.sleep(5000);
-        //takeScreenshot("TC9");
+    @Test(priority = 8)
+    public void Verify_AddMoreQuantityField() throws Exception {
+
+        lp.validateAddMoreQuantityField();Thread.sleep(5000);
+        takeScreenshot("TC9");
+    }
+    @Test(priority = 9)
+    public void Verify_SaveForLaterField() throws Exception {
+
         lp.validateSaveForLaterField();Thread.sleep(5000);
         takeScreenshot("TC10");
+
+    }
+    @Test(priority = 10)
+    public void Verify_MoveToCartField() throws Exception {
+
         lp.validateMoveToCartField();Thread.sleep(5000);
         takeScreenshot("TC11");
-//        lp.validateRemoveQuantityField();Thread.sleep(5000);
-//        takeScreenshot("TC12");
+
+    }
+    @Test(priority = 11)
+    public void Verify_RemoveQuantityField() throws Exception {
+
+
+       lp.validateRemoveQuantityField();Thread.sleep(5000);
+       takeScreenshot("TC12");
+
+    }
+    @Test(priority = 12)
+    public void Verify_PlaceToOrder() throws Exception {
+
         lp.validatePlaceToOrder();Thread.sleep(5000);
         takeScreenshot("TC13");
-
 
     }
 
 
-    @AfterMethod
+    @AfterTest
     public void testEnd(ITestResult result) throws Exception {
         i = i + 1;
         String screenshotName = "Login fail";
