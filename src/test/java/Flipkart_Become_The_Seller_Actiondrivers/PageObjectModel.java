@@ -27,9 +27,11 @@ public class PageObjectModel {
     @FindBy(xpath = "(//div[@class='styles__RegisterContainer-sc-1kfv72o-0 ilMBvo'])[2]")
     WebElement Start_Selling;
     @FindBy(xpath = "//div[@class='styles__LoginContainer-rbc3lh-5 jExJvC']")
-    WebElement Login;
+    WebElement LoginButton;
     @FindBy(xpath = "/html/body/div[1]/div[3]/section/section/div/div[2]/a")
     WebElement Register_For_New_Account;
+    @FindBy(xpath = "//button[@id='moe-dontallow_button']")
+    WebElement DontAllow_Button;
     @FindBy(xpath = "//input[@class='styles__StyledInput-cql555-1 fPuYwe login']")
     WebElement Username_Or_10_Digit_Phone_Number_Or_Email;
     @FindBy(xpath = "//input[@class='styles__StyledInput-cql555-1 gNVcCr styles__CustomInput-sc-12mlfxt-3 bfXnRM sign-up']")
@@ -86,32 +88,28 @@ public class PageObjectModel {
     }
 
     public void Login() {
-
-        Login.click();
+        Actions actions = new Actions(driver);
+        WebElement Login_Button = LoginButton;
+        actions.moveToElement(Login_Button).perform();
+        LoginButton.click();
     }
     public void Register() {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
             System.out.println("Window Switch");
             Register_For_New_Account.click();
-            Alert alert = driver.switchTo ().alert ();
-            String text = alert.getText ();
-            {
-                System.out.println ("alert text is :"+text);
-            }
-            alert.dismiss ();
+
+        }
+    }
+    public void CloseAlert() {
+        for (String winHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(winHandle);
+            System.out.println("Window Switch");
+            DontAllow_Button.click();
 
         }
     }
 
-//    }public  void ClosePopup() {
-//        Alert_Popup
-//        Alert alert = driver.switchTo ().alert ();
-//        String text = alert.getText ();
-//        {
-//            System.out.println ("alert text is :"+text);
-//        }
-//        alert.dismiss ();
 
     public void RegistrationDetails() throws InterruptedException {
 
