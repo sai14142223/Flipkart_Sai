@@ -1,6 +1,7 @@
 package FlipkartTwoWheeler;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 
 public class TwoWheelerPOM {
@@ -21,7 +24,7 @@ public class TwoWheelerPOM {
     WebElement ViewAll_Button;
     @FindBy(xpath = "(//div[@class='_24_Dny'])[1]")
     WebElement FourStarRating;
-    @FindBy(xpath = "(//div[@class='_24_Dny'])[2]")
+    @FindBy(xpath = "(//div[@class='_3879cV'])[3]")
     WebElement ThreeStarRating;
     @FindBy(xpath = "//div[@class='_2id1nE']")
     WebElement ClearAll;
@@ -39,6 +42,8 @@ public class TwoWheelerPOM {
     WebElement Read_More;
     @FindBy(xpath = "//button[@class='_2KpZ6l _1q9yVr']")
     WebElement Rate_Product;
+    @FindBy(xpath = "(//a[@class='_1fGeJ5'])[1]")
+    WebElement ModalVersion;
     @FindBy(xpath = "//button[@class='_2KpZ6l _2U9uOA _3v1-ww']")
     WebElement Add_Cart;
     @FindBy(xpath = "K//div[@class='KK-o3G']")
@@ -84,6 +89,7 @@ public class TwoWheelerPOM {
         actions.moveToElement(menuOption).build().perform();
         menuOption.click();
     }
+
     public void validateThreeStarRating() {
         Actions actions = new Actions(driver);
         WebElement menuOption = ThreeStarRating;
@@ -103,18 +109,37 @@ public class TwoWheelerPOM {
         actions.moveToElement (menuOption).build ().perform ();
         menuOption.click();
     }
+    public void NewTabSwitch(){
+
+            Set<String> handles = driver.getWindowHandles();
+            Iterator<String> it = handles.iterator();
+            String parentTab = it.next();
+            String childTab = it.next();
+            driver.switchTo().window(childTab);
+
+    }
     public void ValidateSelect_ALL_TailImages() throws InterruptedException
     {
-        Actions actions=new Actions (driver);
-        actions.scrollToElement (ClickAllImages).build ().perform ();
-        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
-        List<WebElement>Checkboxes= (List<WebElement>) ClickAllImages;
-        System.out.println ("Total no of elements:"+Checkboxes.size ());
-        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
-        for(int i=0;i<Checkboxes.size ();i++)
-        {
-            Thread.sleep (5000);
-            Checkboxes.get (i).click ();
+//        Actions actions=new Actions (driver);
+//        actions.scrollToElement (ClickAllImages).build ().perform ();
+//        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
+//        List<WebElement>Checkboxes= (List<WebElement>) ClickAllImages;
+//        System.out.println ("Total no of elements:"+Checkboxes.size ());
+//        driver.manage ().timeouts ().implicitlyWait (Duration.ofSeconds (10));
+//        for(int i=0;i<Checkboxes.size ();i++)
+//        {
+//            Thread.sleep (5000);
+//            Checkboxes.get (i).click ();
+//        }
+
+            List<WebElement> allStars = driver.findElements(By.xpath("//div[@class='_35DpL-']"));
+            System.out.println("<<<<<<<<<<<<------List of all stars, size------------>>>>>>>>>>"+allStars.size());
+            for (WebElement e : allStars)
+            {
+                Actions act = new Actions(driver);
+                act.moveToElement(e).build().perform();
+                Thread.sleep(5000);
+
         }
     }
     public void PinCode(){
@@ -148,6 +173,13 @@ public class TwoWheelerPOM {
 //        actions.moveToElement (menuOption).build ().perform ();
 //        menuOption.click();
 //    }
+
+    public void modalVersion(){
+        Actions actions = new Actions(driver);
+        WebElement menuOption = ModalVersion;
+        actions.moveToElement (menuOption).build ().perform ();
+        menuOption.click();
+    }
     public void AddToCart(){
         Actions actions = new Actions(driver);
         WebElement menuOption = Add_Cart;
